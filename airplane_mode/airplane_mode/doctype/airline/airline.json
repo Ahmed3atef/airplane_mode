@@ -33,8 +33,13 @@
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2026-06-16 01:30:09.501161",
+ "links": [
+  {
+   "link_doctype": "Airplane",
+   "link_fieldname": "airline"
+  }
+ ],
+ "modified": "2026-06-16 02:10:33.111230",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airline",

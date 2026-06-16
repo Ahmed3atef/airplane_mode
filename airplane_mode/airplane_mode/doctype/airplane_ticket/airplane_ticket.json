@@ -11,6 +11,7 @@
   "passenger",
   "source_airport",
   "source_airport_code",
+  "status",
   "column_break_zulz",
   "flight",
   "destination_airport",
@@ -114,13 +115,21 @@
   {
    "fieldname": "column_break_jlwl",
    "fieldtype": "Column Break"
+  },
+  {
+   "default": "Booked",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Booked\nChecked-In\nBoarded",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-06-16 02:03:42.172254",
+ "modified": "2026-06-16 02:08:15.553804",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",
@@ -145,6 +154,19 @@
  "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
+ "states": [
+  {
+   "color": "Gray",
+   "title": "Booked"
+  },
+  {
+   "color": "Purple",
+   "title": "Checked-In"
+  },
+  {
+   "color": "Green",
+   "title": "Boarded"
+  }
+ ],
  "track_changes": 1
 }
