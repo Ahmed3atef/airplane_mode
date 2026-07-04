@@ -20,7 +20,12 @@
   "departure_date",
   "departure_time",
   "column_break_jlwl",
-  "duration_of_flight"
+  "duration_of_flight",
+  "section_break_vati",
+  "add_ons",
+  "section_break_ctvi",
+  "flight_price",
+  "total_amount"
  ],
  "fields": [
   {
@@ -117,6 +122,31 @@
    "fieldtype": "Column Break"
   },
   {
+   "fieldname": "section_break_vati",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "add_ons",
+   "fieldtype": "Table",
+   "label": "Add Ons",
+   "options": "Airplane Ticket Add-on Item"
+  },
+  {
+   "fieldname": "section_break_ctvi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "flight_price",
+   "fieldtype": "Currency",
+   "label": "Flight Price",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
+  },
+  {
    "default": "Booked",
    "fieldname": "status",
    "fieldtype": "Select",
@@ -125,11 +155,10 @@
    "reqd": 1
   }
  ],
- "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-06-16 02:08:15.553804",
+ "modified": "2026-07-05 00:27:52.951874",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",
@@ -150,8 +179,6 @@
    "write": 1
   }
  ],
- "row_format": "Dynamic",
- "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [
