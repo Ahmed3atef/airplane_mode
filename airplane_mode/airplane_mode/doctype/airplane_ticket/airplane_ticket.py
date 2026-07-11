@@ -1,12 +1,15 @@
 # Copyright (c) 2026, ahmed.atef and contributors
 # For license information, please see license.txt
 
+import random
 import frappe
 from frappe.model.document import Document
 
 
 class AirplaneTicket(Document):
-    
+    def before_insert(self):
+        self.seat = get_random_seat()
+
     def validate(self):
        
         validate_add_ons(self.get("add_ons"))
@@ -32,6 +35,11 @@ class AirplaneTicket(Document):
 def validate_status_on_submit(status):
     if status != "Boarded":
         frappe.throw("Status must be Boarded to submit ")
+
+
+def get_random_seat():
+    return f"{random.randint(1, 99)}{random.choice('ABCDE')}"
+
 
 def validate_add_ons(itmes):
     add_ons = set()
