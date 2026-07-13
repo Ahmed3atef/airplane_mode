@@ -9,4 +9,4 @@ class FlightPassenger(Document):
 	
  
     def before_save(self):
-        self.full_name = f"{self.first_name} {self.last_name}"
+        self.full_name = f"{self.first_name or ''} {self.last_name or ''}"
