@@ -1,0 +1,29 @@
+{% set color = frappe.form_dict.get("color") or "black" %}
+
+<!doctype html>
+<html>
+    <head>
+        <title>Show Me Colors</title>
+        <style>
+            .color-rect {
+                width: 100%;
+                max-width: 500px;
+                height: 250px;
+                border: 1px solid #000;
+                margin: 40px auto;
+            }
+            .info {
+                text-align: center;
+                font-family: sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="info">
+            <h1>Show Me Colors</h1>
+            <p>Color: {{ color }}</p>
+        </div>
+
+        <div class="color-rect" style="background-color: {{ color }};"></div>
+    </body>
+</html>

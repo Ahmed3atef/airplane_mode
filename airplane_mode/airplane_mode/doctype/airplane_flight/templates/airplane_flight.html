@@ -1,0 +1,23 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div>
+	<h1>{{ doc.name }}</h1>
+
+	<div style="margin-top: 30px;">
+		<h2>Flight Details</h2>
+		<ul class="list-unstyled">
+			<li><strong>Airline:</strong> {{frappe.db.get_value("Airplane", doc.airplane, "airline")}}</li>
+			<li>{{ doc.source_airport_code }} → {{ doc.destination_airport_code }}</li>
+			<li>{{ frappe.utils.formatdate(doc.date_of_departure, "yyyy-MM-dd") }} | {{ doc.time_of_departure }}</li>
+			<li><strong>Duration:</strong> {% set hours = doc.duration // 3600 %}{% set minutes = (doc.duration % 3600) // 60 %}{{ hours|int }}h {{ minutes|int }}m</li>
+		</ul>
+	</div>
+
+	<div style="margin-top: 40px;">
+		<a href="/app/airplane-booking" class="btn btn-primary btn-lg" style="background-color: #0066cc; padding: 12px 30px;">
+			Book Flight
+		</a>
+	</div>
+</div>
+{% endblock %}
