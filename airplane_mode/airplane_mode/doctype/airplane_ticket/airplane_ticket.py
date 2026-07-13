@@ -4,6 +4,7 @@
 import random
 import frappe
 from frappe.model.document import Document
+from frappe.utils import flt
 
 
 class AirplaneTicket(Document):
@@ -11,23 +12,22 @@ class AirplaneTicket(Document):
         self.seat = get_random_seat()
 
     def validate(self):
-       
         validate_add_ons(self.get("add_ons"))
-        
-	
- 
+
     def before_save(self):
         total_addons = 0
         for i in self.add_ons:
-            total_addons += i.amount
+            total_addons += flt(i.amount)
+
+        self.flight_price = flt(self.flight_price or 10000)
         self.total_amount = self.flight_price + total_addons
-        
+
     def before_submit(self):
         validate_status_on_submit(self.status)
-        
+
     def on_submit(self):
         self.status = "Checked-In"
-    
+
     def on_cancel(self):
         self.status = "Boarded"
 
