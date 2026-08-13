@@ -9,6 +9,7 @@ from frappe.utils import flt
 
 class AirplaneTicket(Document):
     def before_insert(self):
+        self.validate_flight_capacity()
         if not self.seat:
             self.seat = get_random_seat()
 
@@ -36,6 +37,20 @@ class AirplaneTicket(Document):
 def validate_status_on_submit(status):
     if status != "Boarded":
         frappe.throw("Status must be Boarded to submit ")
+
+def validate_flight_capacity(self):
+    airplane = frappe.db.get_value("Airplane Flight", self.flight, "airplane")
+    capacity = frappe.db.get_value("Airplane", airplane, "capacity")
+    ticket_count = frappe.db.count(
+        "Airplane Ticket",
+        {
+            "flight": self.flight,
+            "docstatus" : ["!=",2]
+        }
+    )
+    
+    if ticket_count >= capacity:
+        frappe.throw("No seats are available for this flight.")
 
 
 def get_random_seat():
