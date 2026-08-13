@@ -9,7 +9,8 @@ from frappe.utils import flt
 
 class AirplaneTicket(Document):
     def before_insert(self):
-        self.seat = get_random_seat()
+        if not self.seat:
+            self.seat = get_random_seat()
 
     def validate(self):
         validate_add_ons(self.get("add_ons"))
