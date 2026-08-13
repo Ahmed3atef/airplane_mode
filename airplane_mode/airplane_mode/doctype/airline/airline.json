@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "allow_rename": 1,
  "autoname": "prompt",
  "creation": "2026-06-16 01:29:12.042282",
@@ -8,7 +9,8 @@
  "field_order": [
   "founding_year",
   "customer_care_number",
-  "headquarters"
+  "headquarters",
+  "website"
  ],
  "fields": [
   {
@@ -29,9 +31,16 @@
    "fieldtype": "Data",
    "label": "Headquarters",
    "reqd": 1
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website",
+   "options": "URL"
   }
  ],
  "grid_page_length": 50,
+ "has_web_view": 1,
  "index_web_pages_for_search": 1,
  "links": [
   {
@@ -39,7 +48,7 @@
    "link_fieldname": "airline"
   }
  ],
- "modified": "2026-06-16 02:10:33.111230",
+ "modified": "2026-08-13 16:35:44.819727",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airline",
@@ -59,8 +68,8 @@
    "write": 1
   }
  ],
+ "route": "website",
  "row_format": "Dynamic",
- "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
