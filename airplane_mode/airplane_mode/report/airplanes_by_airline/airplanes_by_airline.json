@@ -9,7 +9,7 @@
  "filters": [],
  "idx": 0,
  "is_standard": "Yes",
- "json": "{}",
+ "json": "{\"filters\":[],\"fields\":[[\"name\",\"Airplane\"],[\"model\",\"Airplane\"],[\"capacity\",\"Airplane\"],[\"airline\",\"Airplane\"]],\"order_by\":\"`tabAirplane`.`modified` desc\",\"add_totals_row\":0,\"page_length\":20,\"column_widths\":{\"Airplane:name\":200,\"Airplane:model\":150,\"Airplane:capacity\":100,\"Airplane:airline\":150},\"group_by\":{\"group_by\":\"`tabAirplane`.`airline`\",\"aggregate_function\":\"count\"}}",
  "letter_head": null,
  "modified": "2026-08-16 07:02:31.977813",
  "modified_by": "Administrator",
