@@ -1,0 +1,14 @@
+[
+ {
+  "creation": "2026-08-16 00:00:00.000000",
+  "doctype": "Client Script",
+  "dt": "Airplane",
+  "enabled": 1,
+  "modified": "2026-08-16 00:00:00.000000",
+  "module": "Airplane Mode",
+  "name": "Airplane Audit Field Visibility",
+  "owner": "Administrator",
+  "script": "frappe.ui.form.on('Airplane', {\n\trefresh(frm) {\n\t\tif (!frappe.user_roles.includes('Airport Authority Personnel')) {\n\t\t\tfrm.set_df_property('initial_audit_completed', 'hidden', 1);\n\t\t} else {\n\t\t\tfrm.set_df_property('initial_audit_completed', 'hidden', 0);\n\t\t}\n\t}\n});",
+  "view": "Form"
+ }
+]

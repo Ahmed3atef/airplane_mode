@@ -5,6 +5,13 @@ app_description = " model a hypothetical flight ticket system"
 app_email = "clay674302@gmail.com"
 app_license = "mit"
 
+fixtures = [
+	{
+		"dt": "Client Script",
+		"filters": [["name", "=", "Airplane Audit Field Visibility"]],
+	}
+]
+
 # Apps
 # ------------------
 

@@ -6,33 +6,40 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "model",
-  "airline",
-  "capacity"
- ],
- "fields": [
-  {
-   "fieldname": "model",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Model",
-   "reqd": 1
-  },
-  {
-   "fieldname": "airline",
-   "fieldtype": "Link",
-   "label": "Airline",
-   "options": "Airline",
-   "reqd": 1
-  },
-  {
-   "fieldname": "capacity",
-   "fieldtype": "Int",
-   "label": "Capacity",
-   "non_negative": 1,
-   "reqd": 1
-  }
- ],
+   "model",
+   "airline",
+   "capacity",
+   "initial_audit_completed"
+  ],
+  "fields": [
+   {
+    "fieldname": "model",
+    "fieldtype": "Data",
+    "in_list_view": 1,
+    "label": "Model",
+    "reqd": 1
+   },
+   {
+    "fieldname": "airline",
+    "fieldtype": "Link",
+    "label": "Airline",
+    "options": "Airline",
+    "reqd": 1
+   },
+   {
+    "fieldname": "capacity",
+    "fieldtype": "Int",
+    "label": "Capacity",
+    "non_negative": 1,
+    "reqd": 1
+   },
+   {
+    "fieldname": "initial_audit_completed",
+    "fieldtype": "Check",
+    "label": "Initial Audit Completed",
+    "hidden": 1
+   }
+  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
@@ -43,19 +50,47 @@
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  }
- ],
+   {
+    "create": 1,
+    "delete": 1,
+    "email": 1,
+    "export": 1,
+    "print": 1,
+    "read": 1,
+    "report": 1,
+    "role": "System Manager",
+    "share": 1,
+    "write": 1
+   },
+   {
+    "create": 1,
+    "delete": 1,
+    "email": 1,
+    "export": 1,
+    "print": 1,
+    "read": 1,
+    "report": 1,
+    "role": "Airport Authority Personnel",
+    "share": 1,
+    "write": 1
+   },
+   {
+    "create": 1,
+    "delete": 1,
+    "email": 1,
+    "export": 1,
+    "print": 1,
+    "read": 1,
+    "report": 1,
+    "role": "Fleet Manager",
+    "share": 1,
+    "write": 1
+   },
+   {
+    "read": 1,
+    "role": "Travel Agent"
+   }
+  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
