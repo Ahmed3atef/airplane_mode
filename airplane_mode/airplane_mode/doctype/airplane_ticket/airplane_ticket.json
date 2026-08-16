@@ -208,10 +208,12 @@
     "submit": 1,
     "write": 1
    },
-   {
-    "read": 1,
-    "role": "Flight Crew Member"
-   }
+    {
+     "create": 1,
+     "read": 1,
+     "role": "Flight Crew Member",
+     "write": 1
+    }
   ],
  "sort_field": "modified",
  "sort_order": "DESC",
